@@ -13,7 +13,8 @@ services:
     image: wordpress
     build: .
     volumes:
-      - ./themes:/var/www/html/wp-content/themes
+      - ./data/plugins:/var/www/html/wp-content/plugins
+      - ./data/themes:/var/www/html/wp-content/themes
     links:
       - db
     depends_on:
