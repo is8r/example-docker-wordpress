@@ -16,7 +16,7 @@ $ docker-compose down -v
 ## DB dump
 
 ```
-$ docker exec exampledockerwordpress_db_1 /usr/bin/mysqldump -u root --password=password wordpress > db-data/mysql.dump.sql
+$ docker exec example-docker-wordpress_wordpress_1 /usr/bin/mysqldump -u root --password=somewordpress wordpress > db-data/mysql.dump.sql
 ```
 
 ## 開発
