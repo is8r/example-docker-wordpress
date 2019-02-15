@@ -114,7 +114,7 @@ function get_thumb_path() {
 }
 
 /* 投稿タイプを追加
-//カスタム投稿 topics
+//howto:
 add_action( 'init', 'topics_post_type' );
 function topics_post_type() {
   add_posttype('Topics', 'topics', 2, false, false);
@@ -154,4 +154,16 @@ function add_posttype($name, $slag, $position, $use_categories, $use_eyecatch) {
       )
     );
   }
+}
+
+/* 投稿タイプのタクソノミーを取得 */
+function get_taxonomy_names($post) {
+  $terms = get_the_terms( $post, get_post_type( $post ).'_categories' );
+  $str = '';
+  if ($terms) {
+    foreach($terms as $term) {
+      $str .= $term->name;
+    }
+  }
+  return $str;
 }
