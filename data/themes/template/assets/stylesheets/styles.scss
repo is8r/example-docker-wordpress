@@ -14,6 +14,11 @@ html {
 }
 
 body {
+  @include font;
   color: $color-black;
   background: #fff;
+}
+
+a {
+  color: $color-blue;
 }
